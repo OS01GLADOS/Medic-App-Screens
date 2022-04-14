@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../colors.dart';
+
 class profile_upper_bar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,7 @@ class profile_upper_bar extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Text('edit',
                   style: TextStyle(
-                    color: Colors.blue,
+                    color: customBlueColor,
                     decoration: TextDecoration.underline,
                     decorationThickness: 2,
                   )

@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../colors.dart';
+
 double TextSize = 20;
 double MainTextSize = 35;
 
@@ -50,7 +52,6 @@ class RegisterScreen extends StatelessWidget{
                       TextField(
                           decoration: InputDecoration(
                               hintText: 'Name',
-                              hoverColor: Colors.grey,
                               hintStyle: TextStyle(
                                   fontSize: TextSize
                               )
@@ -60,7 +61,6 @@ class RegisterScreen extends StatelessWidget{
                       TextField(
                           decoration: InputDecoration(
                               hintText: 'Email Adress',
-                              hoverColor: Colors.grey,
                               hintStyle: TextStyle(
                                   fontSize: TextSize
                               )
@@ -82,14 +82,14 @@ class RegisterScreen extends StatelessWidget{
                   margin: EdgeInsets.only(top: 20, bottom: 5),
                   padding: EdgeInsets.symmetric(vertical: 10),
                   decoration: BoxDecoration(
-                      color: Colors.lightGreen,
+                      color: Theme.of(context).colorScheme.primary,
                       borderRadius: BorderRadius.all(Radius.circular(10))
                   ),
                   child: Center(
                     child: Text('SIGNUP',
                       style: TextStyle(
                           fontSize: MainTextSize,
-                          color: Colors.white
+                          color: Theme.of(context).colorScheme.background
                       ),
                     ),
                   ),
@@ -100,13 +100,13 @@ class RegisterScreen extends StatelessWidget{
                     Text('Already have an account? ',
                         style: TextStyle(
                             fontSize: TextSize,
-                            color: Colors.grey
+                            color: customTextGreyColor
                         )
                     ),
                     Text('Sign In',
                         style: TextStyle(
                             fontSize: TextSize,
-                            color: Colors.grey,
+                            color: customTextGreyColor,
                             fontWeight: FontWeight.bold
 
                         )

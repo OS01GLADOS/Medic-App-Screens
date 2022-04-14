@@ -24,7 +24,7 @@ class tools_item extends StatelessWidget{
       margin: EdgeInsets.only(bottom: 20),
       padding: EdgeInsets.only(left: 15, bottom: 25),
       decoration: BoxDecoration(
-          color: Colors.lightGreen,
+          color: Theme.of(context).colorScheme.secondary,
           borderRadius: BorderRadius.all(Radius.circular(20)),
           image: DecorationImage(
             image: AssetImage("assets/images/tool_bgr.png"),
@@ -45,7 +45,7 @@ class tools_item extends StatelessWidget{
             padding: EdgeInsets.only(top:5),
             child:           Text(text,
               style: TextStyle(
-                  color: Colors.white,
+                  color:Theme.of(context).colorScheme.background,
                   fontSize: TextSize * 0.75
               ),
             )

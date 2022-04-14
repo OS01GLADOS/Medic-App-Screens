@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:medic_app_screens/components/down_bar.dart';
 import 'package:medic_app_screens/components/upper_bar.dart';
 
+import '../colors.dart';
+
 double TextSize = 20;
 double MainTextSize = 35;
 
@@ -24,7 +26,7 @@ class mood_selection_widget extends StatelessWidget{
             padding: EdgeInsets.all(10),
             margin: EdgeInsets.only(bottom: 5),
             decoration: BoxDecoration(
-              color: Colors.lightGreen,
+              color: Theme.of(context).colorScheme.secondary,
               borderRadius: BorderRadius.all(Radius.circular(10)),
             ),
             child: Image(
@@ -36,7 +38,7 @@ class mood_selection_widget extends StatelessWidget{
           Text(
             title,
             style: TextStyle(
-              color: Colors.grey
+              color: Theme.of(context).colorScheme.onSurface
             ),
           )
         ],
@@ -65,7 +67,7 @@ class meditaion_card extends StatelessWidget{
       padding: EdgeInsets.symmetric(horizontal: 15, vertical: 8),
       height: 160,
       decoration: BoxDecoration(
-          color: Colors.grey[300],
+          color: customGrey,
           borderRadius: BorderRadius.all(Radius.circular(20)),
           image: DecorationImage(
             image: AssetImage(image),
@@ -79,7 +81,7 @@ class meditaion_card extends StatelessWidget{
             title,
             style: TextStyle(
               fontSize: MainTextSize * 0.7,
-              color: Colors.lightGreen,
+              color: customColorScheme.secondary,
               fontWeight: FontWeight.w600
             ),
           ),
@@ -89,7 +91,7 @@ class meditaion_card extends StatelessWidget{
               text,
               style: TextStyle(
                   fontSize: TextSize * 0.8,
-                  color: Colors.grey[600]
+                  color: customColorScheme.onSurface
               ),
             ),
           ),
@@ -99,7 +101,7 @@ class meditaion_card extends StatelessWidget{
             margin: EdgeInsets.only(top:10),
             padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
             decoration: BoxDecoration(
-              color: Colors.lightGreen,
+              color: Theme.of(context).colorScheme.primary,
               borderRadius: BorderRadius.all(Radius.circular(20)),
             ),
             child: Row(
@@ -108,7 +110,7 @@ class meditaion_card extends StatelessWidget{
                 Text ('Watch Now',
                   style: TextStyle(
                       fontSize: TextSize * 0.8,
-                    color: Colors.white
+                    color: Theme.of(context).colorScheme.background
                   ),
                 ),
                 Image(

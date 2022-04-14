@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:medic_app_screens/components/down_bar.dart';
 import 'package:medic_app_screens/components/upper_bar.dart';
 
+import '../colors.dart';
+
 double TextSize = 20;
 double MainTextSize = 35;
 
@@ -76,7 +78,7 @@ class AudioPlayerScreen extends StatelessWidget{
                           'By: Painting with Passion',
                           style: TextStyle(
                             fontSize: TextSize,
-                            color: Colors.grey,
+                            color: customTextGreyColor,
                           ),
                         ),
                       ],
@@ -90,59 +92,59 @@ class AudioPlayerScreen extends StatelessWidget{
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
 
-                        audioVisualizer(Colors.lightGreen, 20.0),
-                        audioVisualizer(Colors.lightGreen, 60.0),
-                        audioVisualizer(Colors.lightGreen, 45.0),
-                        audioVisualizer(Colors.lightGreen, 20.0),
-                        audioVisualizer(Colors.lightGreen, 60.0),
-                        audioVisualizer(Colors.lightGreen, 40.0),
+                        audioVisualizer(Theme.of(context).colorScheme.primary, 20.0),
+                        audioVisualizer(Theme.of(context).colorScheme.primary, 60.0),
+                        audioVisualizer(Theme.of(context).colorScheme.primary, 45.0),
+                        audioVisualizer(Theme.of(context).colorScheme.primary, 20.0),
+                        audioVisualizer(Theme.of(context).colorScheme.primary, 60.0),
+                        audioVisualizer(Theme.of(context).colorScheme.primary, 40.0),
 
-                        audioVisualizer(Colors.lightGreen, 20.0),
-                        audioVisualizer(Colors.lightGreen, 60.0),
-                        audioVisualizer(Colors.lightGreen, 40.0),
+                        audioVisualizer(Theme.of(context).colorScheme.primary, 20.0),
+                        audioVisualizer(Theme.of(context).colorScheme.primary, 60.0),
+                        audioVisualizer(Theme.of(context).colorScheme.primary, 40.0),
 
-                        audioVisualizer(Colors.lightGreen, 20.0),
-                        audioVisualizer(Colors.lightGreen, 60.0),
-                        audioVisualizer(Colors.lightGreen, 45.0),
-                        audioVisualizer(Colors.lightGreen, 20.0),
-                        audioVisualizer(Colors.lightGreen, 60.0),
-                        audioVisualizer(Colors.lightGreen, 40.0),
+                        audioVisualizer(Theme.of(context).colorScheme.primary, 20.0),
+                        audioVisualizer(Theme.of(context).colorScheme.primary, 60.0),
+                        audioVisualizer(Theme.of(context).colorScheme.primary, 45.0),
+                        audioVisualizer(Theme.of(context).colorScheme.primary, 20.0),
+                        audioVisualizer(Theme.of(context).colorScheme.primary, 60.0),
+                        audioVisualizer(Theme.of(context).colorScheme.primary, 40.0),
 
-                        audioVisualizer(Colors.lightGreen, 20.0),
-                        audioVisualizer(Colors.lightGreen, 60.0),
-                        audioVisualizer(Colors.lightGreen, 45.0),
-                        audioVisualizer(Colors.lightGreen, 20.0),
-                        audioVisualizer(Colors.lightGreen, 60.0),
-                        audioVisualizer(Colors.lightGreen, 40.0),
+                        audioVisualizer(Theme.of(context).colorScheme.primary, 20.0),
+                        audioVisualizer(Theme.of(context).colorScheme.primary, 60.0),
+                        audioVisualizer(Theme.of(context).colorScheme.primary, 45.0),
+                        audioVisualizer(Theme.of(context).colorScheme.primary, 20.0),
+                        audioVisualizer(Theme.of(context).colorScheme.primary, 60.0),
+                        audioVisualizer(Theme.of(context).colorScheme.primary, 40.0),
 
-                        audioVisualizer(Colors.lightGreen, 20.0),
-                        audioVisualizer(Colors.lightGreen, 60.0),
-                        audioVisualizer(Colors.lightGreen, 45.0),
-                        audioVisualizer(Colors.lightGreen, 20.0),
-                        audioVisualizer(Colors.lightGreen, 60.0),
-                        audioVisualizer(Colors.lightGreen, 40.0),
+                        audioVisualizer(Theme.of(context).colorScheme.primary, 20.0),
+                        audioVisualizer(Theme.of(context).colorScheme.primary, 60.0),
+                        audioVisualizer(Theme.of(context).colorScheme.primary, 45.0),
+                        audioVisualizer(Theme.of(context).colorScheme.primary, 20.0),
+                        audioVisualizer(Theme.of(context).colorScheme.primary, 60.0),
+                        audioVisualizer(Theme.of(context).colorScheme.primary, 40.0),
 
-                        audioVisualizer(Colors.lightGreen[100], 20.0),
-                        audioVisualizer(Colors.lightGreen[100], 60.0),
-                        audioVisualizer(Colors.lightGreen[100], 45.0),
-                        audioVisualizer(Colors.lightGreen[100], 20.0),
-                        audioVisualizer(Colors.lightGreen[100], 60.0),
-                        audioVisualizer(Colors.lightGreen[100], 40.0),
+                        audioVisualizer(customColorScheme.secondaryVariant, 20.0),
+                        audioVisualizer(customColorScheme.secondaryVariant, 60.0),
+                        audioVisualizer(customColorScheme.secondaryVariant, 45.0),
+                        audioVisualizer(customColorScheme.secondaryVariant, 20.0),
+                        audioVisualizer(customColorScheme.secondaryVariant, 60.0),
+                        audioVisualizer(customColorScheme.secondaryVariant, 40.0),
 
 
-                        audioVisualizer(Colors.lightGreen[100], 20.0),
-                        audioVisualizer(Colors.lightGreen[100], 60.0),
-                        audioVisualizer(Colors.lightGreen[100], 45.0),
-                        audioVisualizer(Colors.lightGreen[100], 20.0),
-                        audioVisualizer(Colors.lightGreen[100], 60.0),
-                        audioVisualizer(Colors.lightGreen[100], 40.0),
+                        audioVisualizer(customColorScheme.secondaryVariant, 20.0),
+                        audioVisualizer(customColorScheme.secondaryVariant, 60.0),
+                        audioVisualizer(customColorScheme.secondaryVariant, 45.0),
+                        audioVisualizer(customColorScheme.secondaryVariant, 20.0),
+                        audioVisualizer(customColorScheme.secondaryVariant, 60.0),
+                        audioVisualizer(customColorScheme.secondaryVariant, 40.0),
 
-                        audioVisualizer(Colors.lightGreen[100], 20.0),
-                        audioVisualizer(Colors.lightGreen[100], 60.0),
-                        audioVisualizer(Colors.lightGreen[100], 45.0),
-                        audioVisualizer(Colors.lightGreen[100], 20.0),
-                        audioVisualizer(Colors.lightGreen[100], 60.0),
-                        audioVisualizer(Colors.lightGreen[100], 40.0),
+                        audioVisualizer(customColorScheme.secondaryVariant, 20.0),
+                        audioVisualizer(customColorScheme.secondaryVariant, 60.0),
+                        audioVisualizer(customColorScheme.secondaryVariant, 45.0),
+                        audioVisualizer(customColorScheme.secondaryVariant, 20.0),
+                        audioVisualizer(customColorScheme.secondaryVariant, 60.0),
+                        audioVisualizer(customColorScheme.secondaryVariant, 40.0),
                       ],
                     )
                   ),
@@ -154,23 +156,23 @@ class AudioPlayerScreen extends StatelessWidget{
                       children: [
                         Icon(
                           Icons.shuffle,
-                          color: Colors.grey,
+                          color: customColorScheme.onSurface,
                           size: 30,
                         ),
                         Icon(
                             Icons.fast_rewind,
-                          color: Colors.grey,
+                          color: customColorScheme.onSurface,
                           size: 30,
                         ),
                         Container(
                           padding: EdgeInsets.all(20),
                           decoration: BoxDecoration(
-                              color: Colors.grey,
+                              color: customColorScheme.onSurface,
                             borderRadius: BorderRadius.circular(40)
                           ),
                           child: Icon(
                             Icons.pause,
-                            color: Colors.white,
+                            color: customColorScheme.background,
                             size: 30,
                           ),
                         ),
@@ -179,13 +181,13 @@ class AudioPlayerScreen extends StatelessWidget{
                           transform: Matrix4.rotationY(math.pi),
                           child: Icon(
                             Icons.fast_rewind,
-                            color: Colors.grey,
+                            color: customColorScheme.onSurface,
                             size: 30,
                           ),
                         ),
                         Icon(
                             Icons.repeat,
-                          color: Colors.grey,
+                          color: customColorScheme.onSurface,
                           size: 30,
                         ),
                       ],

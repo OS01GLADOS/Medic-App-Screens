@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:medic_app_screens/colors.dart';
 
 double TextSize = 20;
 double MainTextSize = 35;
@@ -39,6 +40,7 @@ class LoginScreen extends StatelessWidget{
             child: Text('Sign in now to acces your excercises and saved music.',
                 style: TextStyle(
                 fontSize: TextSize,
+
               ),
             )
           ),
@@ -49,7 +51,6 @@ class LoginScreen extends StatelessWidget{
                 TextField(
                     decoration: InputDecoration(
                         hintText: 'Email Adress',
-                        hoverColor: Colors.grey,
                         hintStyle: TextStyle(
                           fontSize: TextSize
                         )
@@ -71,7 +72,7 @@ class LoginScreen extends StatelessWidget{
                     'Forgot Password?',
                     textAlign: TextAlign.end,
                     style: TextStyle(
-                      color: Colors.grey
+                      color: customTextGreyColor
                     ),
                   )
                 )
@@ -83,14 +84,14 @@ class LoginScreen extends StatelessWidget{
             margin: EdgeInsets.only(top: 20, bottom: 5),
             padding: EdgeInsets.symmetric(vertical: 10),
             decoration: BoxDecoration(
-                color: Colors.lightGreen,
+                color: Theme.of(context).colorScheme.primary,
                 borderRadius: BorderRadius.all(Radius.circular(10))
             ),
             child: Center(
               child: Text('LOGIN',
                 style: TextStyle(
                   fontSize: MainTextSize,
-                  color: Colors.white
+                  color: Theme.of(context).colorScheme.background
                 ),
               ),
             ),
@@ -101,13 +102,13 @@ class LoginScreen extends StatelessWidget{
               Text('Don’t have an account? ',
                   style: TextStyle(
                       fontSize: TextSize,
-                      color: Colors.grey
+                      color: customTextGreyColor
                   )
               ),
               Text('Sign Up',
                   style: TextStyle(
                     fontSize: TextSize,
-                    color: Colors.grey,
+                    color: customTextGreyColor,
                     fontWeight: FontWeight.bold
 
                   )

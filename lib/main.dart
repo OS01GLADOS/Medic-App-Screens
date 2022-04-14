@@ -8,31 +8,31 @@ import 'package:medic_app_screens/screens/meditation.dart';
 import 'package:medic_app_screens/screens/profile.dart';
 import 'package:medic_app_screens/screens/register.dart';
 import 'package:medic_app_screens/screens/tools.dart';
+import 'package:medic_app_screens/colors.dart';
 
 void main() {
-
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-
+        colorScheme:  customColorScheme
       ),
-      home: ScreensDemo(),
+      home: const ScreensDemo(),
     );
   }
 }
 
 class ScreensDemo extends StatelessWidget{
+  const ScreensDemo({Key? key}) : super(key: key);
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: PageView(

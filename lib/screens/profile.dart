@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:medic_app_screens/components/down_bar.dart';
 import 'package:medic_app_screens/components/profile_upper_bar.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
+import '../colors.dart';
 import 'graphs/Stats.dart';
 import 'graphs/StatsChart.dart';
 
@@ -12,9 +13,6 @@ double MainTextSize = 35;
 double a = 200;
 
 
-
-
-
 class ProfileScreen extends StatelessWidget{
 
   //list for graph
@@ -23,79 +21,79 @@ class ProfileScreen extends StatelessWidget{
     Stats(
       dayName: 'Mon',
       number: 100,
-      barColor: charts.ColorUtil.fromDartColor(Colors.lightGreen),
+      barColor: charts.ColorUtil.fromDartColor(customColorScheme.secondary),
     ),
     Stats(
       dayName: '',
       number: 199,
-      barColor: charts.ColorUtil.fromDartColor(Colors.yellow[300]!),
+      barColor: charts.ColorUtil.fromDartColor(customColorScheme.surface),
     ),
 
     Stats(
       dayName: 'Tue',
       number: 243,
-      barColor: charts.ColorUtil.fromDartColor(Colors.lightGreen),
+      barColor: charts.ColorUtil.fromDartColor(customColorScheme.secondary),
     ),
     Stats(
       dayName: '  ',
       number: 200,
-      barColor: charts.ColorUtil.fromDartColor(Colors.yellow[300]!),
+      barColor: charts.ColorUtil.fromDartColor(customColorScheme.surface),
     ),
 
     Stats(
       dayName: 'Wed',
       number: 300,
-      barColor: charts.ColorUtil.fromDartColor(Colors.lightGreen),
+      barColor: charts.ColorUtil.fromDartColor(customColorScheme.secondary),
     ),
     Stats(
       dayName: '   ',
       number: 274,
-      barColor: charts.ColorUtil.fromDartColor(Colors.yellow[300]!),
+      barColor: charts.ColorUtil.fromDartColor(customColorScheme.surface),
     ),
 
 
     Stats(
       dayName: 'Thu',
       number: 400,
-      barColor: charts.ColorUtil.fromDartColor(Colors.lightGreen),
+      barColor: charts.ColorUtil.fromDartColor(customColorScheme.secondary),
     ),
     Stats(
       dayName: '    ',
       number: 324,
-      barColor: charts.ColorUtil.fromDartColor(Colors.yellow[300]!),
+      barColor: charts.ColorUtil.fromDartColor(customColorScheme.surface),
     ),
 
     Stats(
       dayName: 'Fri',
       number: 520,
-      barColor: charts.ColorUtil.fromDartColor(Colors.lightGreen),
+      barColor: charts.ColorUtil.fromDartColor(customColorScheme.secondary),
     ),
     Stats(
       dayName: '     ',
       number: 534,
-      barColor: charts.ColorUtil.fromDartColor(Colors.yellow[300]!),
+      barColor: charts.ColorUtil.fromDartColor(customColorScheme.surface),
     ),
 
     Stats(
       dayName: 'Sat',
       number: 650,
-      barColor: charts.ColorUtil.fromDartColor(Colors.lightGreen),
+      barColor: charts.ColorUtil.fromDartColor(customColorScheme.secondary),
     ),
     Stats(
       dayName: '      ',
       number: 534,
-      barColor: charts.ColorUtil.fromDartColor(Colors.yellow[300]!),
+      barColor: charts.ColorUtil.fromDartColor(customColorScheme.surface),
     ),
 
     Stats(
       dayName: 'Sun',
       number: 650,
-      barColor: charts.ColorUtil.fromDartColor(Colors.lightGreen),
+      barColor: charts.ColorUtil.fromDartColor(customColorScheme.secondary),
     ),
     Stats(
       dayName: '        ',
       number: 900,
-      barColor: charts.ColorUtil.fromDartColor(Colors.yellow[300]!),
+      barColor: charts.ColorUtil.fromDartColor(customColorScheme.surface),
     ),
 
   ];
@@ -137,7 +135,7 @@ class ProfileScreen extends StatelessWidget{
                             'Lucknow, India',
                             style: TextStyle(
                               fontSize: TextSize,
-                              color: Colors.grey,
+                              color: customTextGreyColor,
                             ),
                           ),
                         ],
@@ -154,15 +152,14 @@ class ProfileScreen extends StatelessWidget{
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                               border: Border(
-                                bottom: BorderSide(width: 5.0, color: Colors.lightGreen),
+                                bottom: BorderSide(width: 5.0, color: Theme.of(context).colorScheme.primary),
                               ),
                             ),
                             child: Text(
                                 'STATS',
                               style: TextStyle(
-
                                 fontWeight: FontWeight.w600,
-                                color: Colors.lightGreen
+                                color: Theme.of(context).colorScheme.primary
                               ),
                             ),
                           ),
@@ -172,14 +169,14 @@ class ProfileScreen extends StatelessWidget{
                             width: MediaQuery.of(context).size.width * 0.5,
                             decoration: BoxDecoration(
                               border: Border(
-                                bottom: BorderSide(width: 5.0, color: Colors.grey),
+                                bottom: BorderSide(width: 5.0, color: customColorScheme.onSurface),
                               ),
                             ),
                             child: Text(
                                 'ACHIEVEMENTS',
                               style: TextStyle(
                                   fontWeight: FontWeight.w600,
-                                  color: Colors.grey
+                                  color: customColorScheme.onSurface
                               ),
                             ),
                           )
@@ -203,7 +200,7 @@ class ProfileScreen extends StatelessWidget{
                               Text('Show All',
                               style: TextStyle(
                                 fontWeight: FontWeight.w600,
-                                color: Colors.green
+                                color: Theme.of(context).colorScheme.primary
                               ),)
                             ],
                           ),

@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:medic_app_screens/components/down_bar.dart';
 import 'package:medic_app_screens/components/upper_bar.dart';
 
+import '../colors.dart';
+
 double TextSize = 20;
 double MainTextSize = 35;
 
@@ -39,13 +41,13 @@ class audio_item_widget extends StatelessWidget{
               Text(title,
                 style: TextStyle(
                   fontSize: 18,
-                  color: Colors.grey[900]
+                  color: customTextGrey900Color
                 ),
               ),
               SizedBox(height: 8),
               Text(listeners.toString()+ ' listeners',
                 style: TextStyle(
-                    color: Colors.grey
+                    color: customTextGreyColor
                 ),
               )
             ],
@@ -54,7 +56,7 @@ class audio_item_widget extends StatelessWidget{
           Text(
             length.toString() + ' Min',
             style: TextStyle(
-                color: Colors.grey
+                color: customTextGreyColor
             ),
           )
         ],
@@ -90,7 +92,7 @@ class AudioListScreen extends StatelessWidget{
                         Text(
                           'Relax Sounds ',
                           style: TextStyle(
-                            color: Colors.white,
+                            color: customColorScheme.background,
                             fontSize: MainTextSize
                           ),
                         ),
@@ -99,7 +101,7 @@ class AudioListScreen extends StatelessWidget{
                           child: Text(
                             'Sometimes the most productive thing you can do is relax.',
                             style: TextStyle(
-                                color: Colors.white,
+                                color: customColorScheme.background,
                                 fontSize: TextSize * 0.75
                             ),
                           ),
@@ -111,7 +113,7 @@ class AudioListScreen extends StatelessWidget{
                           margin: EdgeInsets.only(top:20),
                           padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
                           decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: customColorScheme.background,
                             borderRadius: BorderRadius.all(Radius.circular(20)),
                           ),
                           child: Row(

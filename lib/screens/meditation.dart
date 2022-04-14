@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:medic_app_screens/components/down_bar.dart';
 import 'package:medic_app_screens/components/upper_bar.dart';
 
+import '../colors.dart';
+
 double TextSize = 20;
 double MainTextSize = 35;
 
@@ -28,13 +30,13 @@ class MeditationScreen extends StatelessWidget{
                         'Guided by a short introductory course,',
                         style: TextStyle(
                             fontSize: TextSize,
-                            color: Colors.grey
+                            color: customTextGreyColor
                       ),
                       ),
                       Text('start trying meditation.',
                         style: TextStyle(
                             fontSize: TextSize,
-                            color: Colors.grey
+                            color: customTextGreyColor
                         ),
                       ),
 
@@ -48,14 +50,14 @@ class MeditationScreen extends StatelessWidget{
 
                       Text('45:00', style: TextStyle(
                           fontSize: MainTextSize,
-                          color: Colors.grey
+                          color: customTextGreyColor
                       ),
                       ),
                       Container(
                         margin: EdgeInsets.only(left :80, right: 80, top: 10),
                         padding: EdgeInsets.symmetric(vertical: 15),
                         decoration: BoxDecoration(
-                            color: Colors.green,
+                            color: Theme.of(context).colorScheme.primary,
                             borderRadius: BorderRadius.all(Radius.circular(10))
                         ),
                         alignment: Alignment.center,
@@ -63,7 +65,7 @@ class MeditationScreen extends StatelessWidget{
                             'Start Now',
                             style: TextStyle(
                             fontSize: TextSize,
-                                color: Colors.white
+                                color: customColorScheme.background
                         ),
                         ),
                       )
