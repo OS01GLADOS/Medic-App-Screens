@@ -1,30 +1,32 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class upper_bar extends StatelessWidget {
+class UpperBar extends StatelessWidget {
+  const UpperBar({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 10),
-      padding: EdgeInsets.only(top: 50, bottom: 30),
+      margin: const EdgeInsets.symmetric(horizontal: 10),
+      padding: const EdgeInsets.only(top: 50, bottom: 30),
       child: Row(
         children:[
-          Image(
+          const Image(
               width: 50,
               height: 50,
               image: AssetImage('assets/icons/hamburger.png')),
-          Spacer(),
-          Image(
+          const Spacer(),
+          const Image(
               width: 50,
               height: 50,
               image: AssetImage('assets/images/logo.png')),
-          Spacer(),
+          const Spacer(),
           Container(
               width: 50,
               height: 50,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 shape: BoxShape.circle,
-                image: new DecorationImage(
+                image: DecorationImage(
                     fit: BoxFit.fill,
                     image: AssetImage('assets/images/patrik.jpg')),
               )

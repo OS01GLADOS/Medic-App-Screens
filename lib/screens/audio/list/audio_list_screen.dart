@@ -3,83 +3,29 @@ import 'package:flutter/material.dart';
 import 'package:medic_app_screens/components/down_bar.dart';
 import 'package:medic_app_screens/components/upper_bar.dart';
 
-import '../colors.dart';
+import '../../../colors.dart';
+import 'audio_item_widget.dart';
 
 double TextSize = 20;
 double MainTextSize = 35;
 
-class audio_item_widget extends StatelessWidget{
-
-  String image = '';
-  String title = '';
-  int length = 0;
-  int listeners = 0;
-
-  audio_item_widget(this.image, this.title, this.length, this.listeners);
+class AudioListScreen extends StatelessWidget{
+  const AudioListScreen({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            width: 70,
-            height: 70,
-            margin: EdgeInsets.only(right: 30),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              image: DecorationImage(
-                image: AssetImage(image)
-              )
-            ),
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(title,
-                style: TextStyle(
-                  fontSize: 18,
-                  color: customTextGrey900Color
-                ),
-              ),
-              SizedBox(height: 8),
-              Text(listeners.toString()+ ' listeners',
-                style: TextStyle(
-                    color: customTextGreyColor
-                ),
-              )
-            ],
-          ),
-          Spacer(),
-          Text(
-            length.toString() + ' Min',
-            style: TextStyle(
-                color: customTextGreyColor
-            ),
-          )
-        ],
-      ),
-    );
-  }
-
-}
-
-class AudioListScreen extends StatelessWidget{
   Widget build(BuildContext context) {
     return Center(
       child: Column(
         children: [
-          upper_bar(),
+          const UpperBar(),
           Expanded(
               child: Column(
                 children: [
                   Container(
                     width: double.infinity,
-                    padding: EdgeInsets.only(left: 20, top: 40, bottom: 20),
-                    margin: EdgeInsets.only(left: 20, right: 20),
-                    decoration: BoxDecoration(
+                    padding: const EdgeInsets.only(left: 20, top: 40, bottom: 20),
+                    margin: const EdgeInsets.only(left: 20, right: 20),
+                    decoration: const BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(30)),
                       image: DecorationImage(
                         image:  AssetImage('assets/images/Rect_cover.jpg'),
@@ -96,7 +42,7 @@ class AudioListScreen extends StatelessWidget{
                             fontSize: MainTextSize
                           ),
                         ),
-                        Container(
+                        SizedBox(
                           width: 220,
                           child: Text(
                             'Sometimes the most productive thing you can do is relax.',
@@ -110,11 +56,11 @@ class AudioListScreen extends StatelessWidget{
                         Container(
                           alignment: Alignment.center,
                           width: 150,
-                          margin: EdgeInsets.only(top:20),
-                          padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+                          margin: const EdgeInsets.only(top:20),
+                          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
                           decoration: BoxDecoration(
                             color: customColorScheme.background,
-                            borderRadius: BorderRadius.all(Radius.circular(20)),
+                            borderRadius: const BorderRadius.all(Radius.circular(20)),
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -124,7 +70,7 @@ class AudioListScreen extends StatelessWidget{
                                     fontSize: TextSize * 0.8,
                                 ),
                               ),
-                              Image(
+                              const Image(
                                 image: AssetImage('assets/icons/play_n.png'),
                               )
                             ],
@@ -135,28 +81,28 @@ class AudioListScreen extends StatelessWidget{
                   ),
                   Container(
                     width: double.infinity,
-                    margin: EdgeInsets.only(left: 20, right: 20, top: 20),
+                    margin: const EdgeInsets.only(left: 20, right: 20, top: 20),
                     child: Column(
                       children: [
-                        audio_item_widget(
+                        AudioItemWidget(
                             'assets/images/music_cover.jpg',
                             'Painting Forest',
                             28,
                             59899
                         ),
-                        audio_item_widget(
+                        AudioItemWidget(
                             'assets/images/cover1.png',
                             'Mountaineers',
                             20,
                             59899
                         ),
-                        audio_item_widget(
+                        AudioItemWidget(
                             'assets/images/cover2.jpg',
                             'Lovely Deserts',
                             12,
                             59899
                         ),
-                        audio_item_widget(
+                        AudioItemWidget(
                             'assets/images/cover3.jpg',
                             'The Hill Sides',
                             33,
@@ -168,7 +114,7 @@ class AudioListScreen extends StatelessWidget{
                 ],
               ),
           ),
-          down_bar.setActive(2)
+          DownBar.setActive(2)
         ],
       )
     );

@@ -1,28 +1,33 @@
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:flutter/material.dart';
 import '../../colors.dart';
-import 'Stats.dart';
+import 'stats.dart';
 
 
-class StatsChart extends StatelessWidget {
+class StatsChart extends StatefulWidget {
 
   final List<Stats> data;
 
-  StatsChart({required this.data});
+  const StatsChart({Key? key, required this.data}) : super(key: key);
 
+  @override
+  State<StatsChart> createState() => _StatsChartState();
+}
+
+class _StatsChartState extends State<StatsChart> {
   @override
   Widget build(BuildContext context) {
     List<charts.Series<Stats, String>> series = [
       charts.Series(
-          id: "developers",
-          data: data,
+          id: "profile_stats",
+          data: widget.data,
           domainFn: (Stats series, _) => series.dayName,
           measureFn: (Stats series, _) => series.number,
           colorFn: (Stats series, _) => series.barColor
       )
     ];
 
-    return Container(
+    return SizedBox(
       height: 240,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
@@ -31,26 +36,25 @@ class StatsChart extends StatelessWidget {
                 child: charts.BarChart(
                   series,
                   animate: true,
-                  domainAxis: new charts.OrdinalAxisSpec(
-                      renderSpec: new charts.SmallTickRendererSpec(
+                  domainAxis: const charts.OrdinalAxisSpec(
+                      renderSpec: charts.SmallTickRendererSpec(
                         // Tick and Label styling here.
-                          labelStyle: new charts.TextStyleSpec(
+                          labelStyle: charts.TextStyleSpec(
                               color: customChartColor),
 
                           // Change the line colors to match text color.
-                          lineStyle: new charts.LineStyleSpec(
+                          lineStyle: charts.LineStyleSpec(
                               color: customChartColor))),
-                  primaryMeasureAxis: new charts.NumericAxisSpec(
-                      renderSpec: new charts.GridlineRendererSpec(
+                  primaryMeasureAxis: const charts.NumericAxisSpec(
+                      renderSpec: charts.GridlineRendererSpec(
 
                         // Tick and Label styling here.
-                          labelStyle: new charts.TextStyleSpec(
+                          labelStyle: charts.TextStyleSpec(
                               color: customChartColor),
 
                           // Change the line colors to match text color.
-                          lineStyle: new charts.LineStyleSpec(
+                          lineStyle: charts.LineStyleSpec(
                               color: customChartColor))),
-
                 ),
               )
             ],

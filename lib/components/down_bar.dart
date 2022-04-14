@@ -1,35 +1,35 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class down_bar extends StatelessWidget {
-  int active_item = 1;
-  down_bar(){
-    active_item = 0;
+// ignore: must_be_immutable
+class DownBar extends StatelessWidget {
+
+  int activeItem = 0;
+  DownBar({Key? key}) : super(key: key){
+    activeItem = 0;
   }
 
-  down_bar.setActive(int number){
-    active_item = number;
-  }
+  DownBar.setActive(this.activeItem, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Image(
-              width: (active_item == 1)?  40 : 30,
-              height: (active_item == 1)?  40 : 30,
-              image: AssetImage('assets/icons/b1'+((active_item == 1)?  'a': '') + '.png',)),
+              width: (activeItem == 1)?  40 : 30,
+              height: (activeItem == 1)?  40 : 30,
+              image: AssetImage('assets/icons/b1'+((activeItem == 1)?  'a': '') + '.png',)),
           Image(
-              width: (active_item == 2)?  40 : 30,
-              height: (active_item == 2)?  40 : 30,
-              image: AssetImage('assets/icons/b2'+((active_item == 2)?  'a': '') + '.png',)),
+              width: (activeItem == 2)?  40 : 30,
+              height: (activeItem == 2)?  40 : 30,
+              image: AssetImage('assets/icons/b2'+((activeItem == 2)?  'a': '') + '.png',)),
           Image(
-              width: (active_item == 3)?  40 : 30,
-              height: (active_item == 3)?  40 : 30,
-              image: AssetImage('assets/icons/b3'+((active_item == 3)?  'a': '') + '.png',)),
+              width: (activeItem == 3)?  40 : 30,
+              height: (activeItem == 3)?  40 : 30,
+              image: AssetImage('assets/icons/b3'+((activeItem == 3)?  'a': '') + '.png',)),
 
         ],
       ),

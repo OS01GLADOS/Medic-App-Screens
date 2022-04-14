@@ -5,7 +5,7 @@ import 'dart:ui';
 const customChartColor = charts.Color(r:129, g:133, b:134);
 const customTextGreyColor = Colors.grey;
 const customTextGrey900Color = Color(0x212121FF);
-const customTextGrey700Color = Color(0x616161FF);
+const customTextGrey700Color = Color(0xFF9A9A9E);
 const customBlueColor = Colors.blue;
 const customGrey = Color(0x1DBDB9B9);
 

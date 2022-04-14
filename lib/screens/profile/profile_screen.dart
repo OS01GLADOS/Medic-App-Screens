@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:medic_app_screens/components/down_bar.dart';
 import 'package:medic_app_screens/components/profile_upper_bar.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
-import '../colors.dart';
-import 'graphs/Stats.dart';
-import 'graphs/StatsChart.dart';
+import '../../colors.dart';
+import 'stats.dart';
+import 'stats_chart.dart';
 
 
 double TextSize = 20;
@@ -12,10 +12,17 @@ double MainTextSize = 35;
 
 double a = 200;
 
-
-class ProfileScreen extends StatelessWidget{
+class ProfileScreen extends StatefulWidget{
 
   //list for graph
+
+  const ProfileScreen({Key? key}) : super(key: key);
+
+  @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
   final List<Stats> data = [
 
     Stats(
@@ -98,20 +105,20 @@ class ProfileScreen extends StatelessWidget{
 
   ];
 
-
+  @override
   Widget build(BuildContext context) {
     return Center(
         child: Column(
           children: [
-            profile_upper_bar(),
+            const ProfileUpperBar(),
             Expanded(
                 child: Column(
                   children: [
                     Container(
                       width: a,
                       height: a,
-                      margin: EdgeInsets.only(bottom: 15),
-                      decoration: BoxDecoration(
+                      margin: const EdgeInsets.only(bottom: 15),
+                      decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                           image: DecorationImage(
                               fit: BoxFit.fill,
@@ -120,7 +127,7 @@ class ProfileScreen extends StatelessWidget{
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
@@ -142,13 +149,13 @@ class ProfileScreen extends StatelessWidget{
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.only(top: 10, bottom:25),
+                      padding: const EdgeInsets.only(top: 10, bottom:25),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Container(
                             width: MediaQuery.of(context).size.width * 0.5,
-                            padding: EdgeInsets.only(bottom: 7),
+                            padding: const EdgeInsets.only(bottom: 7),
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                               border: Border(
@@ -165,7 +172,7 @@ class ProfileScreen extends StatelessWidget{
                           ),
                           Container(
                             alignment: Alignment.center,
-                            padding: EdgeInsets.only(bottom: 7),
+                            padding: const EdgeInsets.only(bottom: 7),
                             width: MediaQuery.of(context).size.width * 0.5,
                             decoration: BoxDecoration(
                               border: Border(
@@ -186,14 +193,14 @@ class ProfileScreen extends StatelessWidget{
                     ),
 
                     Container(
-                      margin: EdgeInsets.symmetric(horizontal: 40),
+                      margin: const EdgeInsets.symmetric(horizontal: 40),
                       child:
                       Column(
                         children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text('This Week’s Stats',
+                              const Text('This Week’s Stats',
                               style: TextStyle(
                                 fontWeight: FontWeight.bold
                               ),),
@@ -211,12 +218,10 @@ class ProfileScreen extends StatelessWidget{
                       )
 
                     )
-
-
                   ],
                 )
             ),
-            down_bar.setActive(3)
+            DownBar.setActive(3)
           ],
         )
     );

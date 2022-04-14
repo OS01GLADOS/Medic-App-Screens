@@ -2,21 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:medic_app_screens/components/down_bar.dart';
 import 'package:medic_app_screens/components/upper_bar.dart';
 
-import '../colors.dart';
+import '../../colors.dart';
 
 double TextSize = 20;
 double MainTextSize = 35;
 
 class MeditationScreen extends StatelessWidget{
+  const MeditationScreen({Key? key}) : super(key: key);
+
+  @override
   Widget build(BuildContext context) {
     return Center(
         child: Column(
           children: [
-            upper_bar(),
+            const UpperBar(),
             Expanded(
                 child:Container(
                   width: double.infinity,
-                  margin: EdgeInsets.symmetric(horizontal: 20),
+                  margin: const EdgeInsets.symmetric(horizontal: 20),
                   child: Column(
                     children: [
                       Text(
@@ -40,7 +43,7 @@ class MeditationScreen extends StatelessWidget{
                         ),
                       ),
 
-                      Padding(
+                      const Padding(
                         padding: EdgeInsets.only(top: 20, bottom: 15),
                         child: Image(
                             height: 250,
@@ -54,11 +57,11 @@ class MeditationScreen extends StatelessWidget{
                       ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(left :80, right: 80, top: 10),
-                        padding: EdgeInsets.symmetric(vertical: 15),
+                        margin: const EdgeInsets.only(left :80, right: 80, top: 10),
+                        padding: const EdgeInsets.symmetric(vertical: 15),
                         decoration: BoxDecoration(
                             color: Theme.of(context).colorScheme.primary,
-                            borderRadius: BorderRadius.all(Radius.circular(10))
+                            borderRadius: const BorderRadius.all(Radius.circular(10))
                         ),
                         alignment: Alignment.center,
                         child: Text(
@@ -73,7 +76,7 @@ class MeditationScreen extends StatelessWidget{
                   ),
                 )
             ),
-            down_bar()
+            DownBar()
           ],
         )
     );

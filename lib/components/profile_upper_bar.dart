@@ -3,29 +3,31 @@ import 'package:flutter/material.dart';
 
 import '../colors.dart';
 
-class profile_upper_bar extends StatelessWidget {
+class ProfileUpperBar extends StatelessWidget {
+  const ProfileUpperBar({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 10),
-      padding: EdgeInsets.only(top: 50, bottom: 30),
+      margin: const EdgeInsets.symmetric(horizontal: 10),
+      padding: const EdgeInsets.only(top: 50, bottom: 30),
       child: Row(
           children:[
-            Image(
+            const Image(
                 width: 50,
                 height: 50,
                 image: AssetImage('assets/icons/hamburger.png')),
-            Spacer(),
-            Image(
+            const Spacer(),
+            const Image(
                 width: 50,
                 height: 50,
                 image: AssetImage('assets/images/logo.png')),
-            Spacer(),
+            const Spacer(),
             Container(
                 width: 50,
                 height: 50,
                 alignment: Alignment.center,
-                child: Text('edit',
+                child: const Text('edit',
                   style: TextStyle(
                     color: customBlueColor,
                     decoration: TextDecoration.underline,

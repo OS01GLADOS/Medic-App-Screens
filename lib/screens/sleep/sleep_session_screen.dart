@@ -4,42 +4,49 @@ import 'package:medic_app_screens/components/upper_bar.dart';
 
 import 'package:charts_flutter/flutter.dart' as charts;
 
-import '../colors.dart';
-import 'graphs/BedtimeStats.dart';
-import 'graphs/bedtimeChart.dart';
+import '../../colors.dart';
 
-class sleep_session_card extends StatelessWidget{
+import 'bedtime_stats.dart';
+import 'bedtime_chart.dart';
+
+// ignore: must_be_immutable
+class SleepSessionCard extends StatefulWidget{
 
   late Color? color;
   String bigText = '';
   String littleText = '';
   String icon = '';
 
-  sleep_session_card(this.color, this.bigText, this.littleText, this.icon);
+  SleepSessionCard(this.color, this.bigText, this.littleText, this.icon, {Key? key}) : super(key: key);
 
+  @override
+  State<SleepSessionCard> createState() => _SleepSessionCardState();
+}
+
+class _SleepSessionCardState extends State<SleepSessionCard> {
   @override
   Widget build(BuildContext context) {
    return Container(
-     padding: EdgeInsets.symmetric(vertical: 43, horizontal: 22),
+     padding: const EdgeInsets.symmetric(vertical: 43, horizontal: 22),
      decoration: BoxDecoration(
-       color: color,
+       color: widget.color,
        borderRadius: BorderRadius.circular(20)
      ),
      child: Column(
        children: [
-         Image(image:  AssetImage(icon),),
-         SizedBox(height: 30),
+         Image(image:  AssetImage(widget.icon),),
+         const SizedBox(height: 30),
          Text(
-             bigText,
+             widget.bigText,
            style: TextStyle(
              fontWeight: FontWeight.w600,
              fontSize: 19,
              color: customColorScheme.background
            ),
          ),
-         SizedBox(height: 10),
+         const SizedBox(height: 10),
          Text(
-             littleText,
+             widget.littleText,
            style: TextStyle(
                color: customColorScheme.background
            ),
@@ -48,7 +55,6 @@ class sleep_session_card extends StatelessWidget{
      ),
    );
   }
-  
 }
 
 
@@ -184,19 +190,22 @@ class SleepSessionScreen extends StatelessWidget{
 
     ];
 
+  SleepSessionScreen({Key? key}) : super(key: key);
+
+  @override
   Widget build(BuildContext context) {
     return Center(
         child: Column(
           children: [
-            upper_bar(),
+            const UpperBar(),
             Expanded(
                child: Container(
                  width: double.infinity,
-                 margin: EdgeInsets.symmetric(horizontal: 20),
+                 margin: const EdgeInsets.symmetric(horizontal: 20),
                  child: Column(
                    crossAxisAlignment: CrossAxisAlignment.start,
                    children: [
-                     Text(
+                     const Text(
                        'Sleep Session',
                        style: TextStyle(
                          color: customTextGrey700Color,
@@ -204,24 +213,24 @@ class SleepSessionScreen extends StatelessWidget{
                          fontSize: 33
                        ),
                      ),
-                     SizedBox(height: 20),
+                     const SizedBox(height: 20),
                      Row(
                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                          children: [
-                           sleep_session_card(Theme.of(context).colorScheme.secondary, '5h 30m', 'Sleep', 'assets/icons/moon.png'),
-                           sleep_session_card(Theme.of(context).colorScheme.primary, '1h 10m', 'Deep', 'assets/icons/halfss.png'),
-                           sleep_session_card(Theme.of(context).colorScheme.secondary, '3h 30m', 'Quality', 'assets/icons/star.png'),
+                           SleepSessionCard(Theme.of(context).colorScheme.secondary, '5h 30m', 'Sleep', 'assets/icons/moon.png'),
+                           SleepSessionCard(Theme.of(context).colorScheme.primary, '1h 10m', 'Deep', 'assets/icons/halfss.png'),
+                           SleepSessionCard(Theme.of(context).colorScheme.secondary, '3h 30m', 'Quality', 'assets/icons/star.png'),
                          ],
                      ),
-                     SizedBox(height: 20),
-                     Text('Bedtime',
+                     const SizedBox(height: 20),
+                     const Text('Bedtime',
                        style: TextStyle(
                            color: customTextGrey700Color,
                            fontWeight: FontWeight.w700,
                            fontSize: 33
                        ),
                      ),
-                     SizedBox(height: 20),
+                     const SizedBox(height: 20),
                      BedtimeChart(
                        data1: data1,
                        data2: data2
@@ -231,7 +240,7 @@ class SleepSessionScreen extends StatelessWidget{
                  ),
                )
             ),
-            down_bar()
+            DownBar()
           ],
         )
     );
