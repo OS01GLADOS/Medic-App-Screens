@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-double TextSize = 20;
-double MainTextSize = 35;
+import '../../constants.dart';
+
 
 // ignore: must_be_immutable
 class ToolsItem extends StatefulWidget{
@@ -49,7 +49,7 @@ class _ToolsItemState extends State<ToolsItem> {
               child: Text(widget.text,
                 style: TextStyle(
                     color:Theme.of(context).colorScheme.background,
-                    fontSize: TextSize * 0.75
+                    fontSize: textSize * 0.75
                 ),
               )
           )

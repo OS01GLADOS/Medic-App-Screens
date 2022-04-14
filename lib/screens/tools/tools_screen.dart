@@ -3,10 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:medic_app_screens/components/down_bar.dart';
 import 'package:medic_app_screens/components/upper_bar.dart';
 
+import '../../constants.dart';
 import 'tools_item.dart';
 
-double TextSize = 20;
-double MainTextSize = 35;
 
 class ToolsScreen extends StatelessWidget{
   const ToolsScreen({Key? key}) : super(key: key);
@@ -16,7 +15,7 @@ class ToolsScreen extends StatelessWidget{
   Widget build(BuildContext context) {
     return  Column(
       children: [
-        const UpperBar(),
+        UpperBar(),
         Expanded(
           child:Container(
             width: double.infinity,
@@ -24,10 +23,10 @@ class ToolsScreen extends StatelessWidget{
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children:[
-                  Text(
+                  const Text(
                     'Tools',
                     style: TextStyle(
-                        fontSize: MainTextSize,
+                        fontSize: mainTextSize,
                         fontWeight: FontWeight.bold
                     ),
                   ),

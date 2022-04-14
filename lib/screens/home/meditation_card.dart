@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../colors.dart';
+import '../../constants.dart';
 
-double TextSize = 20;
-double MainTextSize = 35;
 
 // ignore: must_be_immutable
 class MeditationCard extends StatefulWidget{
@@ -43,7 +42,7 @@ class _MeditationCardState extends State<MeditationCard> {
           Text(
             widget.title,
             style: TextStyle(
-                fontSize: MainTextSize * 0.7,
+                fontSize: mainTextSize * 0.7,
                 color: customColorScheme.secondary,
                 fontWeight: FontWeight.w600
             ),
@@ -53,7 +52,7 @@ class _MeditationCardState extends State<MeditationCard> {
             child: Text(
               widget.text,
               style: TextStyle(
-                  fontSize: TextSize * 0.8,
+                  fontSize: textSize * 0.8,
                   color: customColorScheme.onSurface
               ),
             ),
@@ -72,7 +71,7 @@ class _MeditationCardState extends State<MeditationCard> {
               children: [
                 Text ('Watch Now',
                   style: TextStyle(
-                      fontSize: TextSize * 0.8,
+                      fontSize: textSize * 0.8,
                       color: Theme.of(context).colorScheme.background
                   ),
                 ),

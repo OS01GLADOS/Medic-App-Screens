@@ -6,12 +6,11 @@ import 'package:medic_app_screens/components/down_bar.dart';
 import 'package:medic_app_screens/components/upper_bar.dart';
 
 import '../../../colors.dart';
+import '../../../constants.dart';
 import 'audio_visualizer.dart';
+import 'player_control_button.dart';
 
-double TextSize = 20;
-double MainTextSize = 35;
-
-double a = 300;
+const double a = 300;
 
 class AudioPlayerScreen extends StatelessWidget{
   const AudioPlayerScreen({Key? key}) : super(key: key);
@@ -21,7 +20,7 @@ class AudioPlayerScreen extends StatelessWidget{
     return Center(
       child: Column(
         children: [
-          const UpperBar(),
+          UpperBar(),
           Expanded(
               child: Column(
                 children: [
@@ -41,18 +40,18 @@ class AudioPlayerScreen extends StatelessWidget{
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
+                      children: const [
                         Text(
                           'Painting Forest',
                           style: TextStyle(
                             fontWeight: FontWeight.w500,
-                            fontSize: MainTextSize * 0.85
+                            fontSize: mainTextSize * 0.85
                           ),
                         ),
                         Text(
                           'By: Painting with Passion',
                           style: TextStyle(
-                            fontSize: TextSize,
+                            fontSize: textSize,
                             color: customTextGreyColor,
                           ),
                         ),
@@ -66,7 +65,6 @@ class AudioPlayerScreen extends StatelessWidget{
                     child:  Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-
                         AudioVisualizer(Theme.of(context).colorScheme.primary, 20.0),
                         AudioVisualizer(Theme.of(context).colorScheme.primary, 60.0),
                         AudioVisualizer(Theme.of(context).colorScheme.primary, 45.0),
@@ -129,42 +127,24 @@ class AudioPlayerScreen extends StatelessWidget{
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Icon(
-                          Icons.shuffle,
-                          color: customColorScheme.onSurface,
-                          size: 30,
-                        ),
-                        Icon(
-                            Icons.fast_rewind,
-                          color: customColorScheme.onSurface,
-                          size: 30,
-                        ),
+                        PlayerControlButton( Icons.shuffle, customColorScheme.onSurface),
+                        PlayerControlButton( Icons.fast_rewind, customColorScheme.onSurface),
                         Container(
                           padding: const EdgeInsets.all(20),
                           decoration: BoxDecoration(
                               color: customColorScheme.onSurface,
                             borderRadius: BorderRadius.circular(40)
                           ),
-                          child: Icon(
-                            Icons.pause,
-                            color: customColorScheme.background,
-                            size: 30,
-                          ),
+                          child:
+                          PlayerControlButton(  Icons.pause, customColorScheme.background,)
                         ),
                         Transform(
                           alignment: Alignment.center,
                           transform: Matrix4.rotationY(math.pi),
-                          child: Icon(
-                            Icons.fast_rewind,
-                            color: customColorScheme.onSurface,
-                            size: 30,
-                          ),
+                          child:
+                          PlayerControlButton( Icons.fast_rewind, customColorScheme.onSurface)
                         ),
-                        Icon(
-                            Icons.repeat,
-                          color: customColorScheme.onSurface,
-                          size: 30,
-                        ),
+                        PlayerControlButton( Icons.repeat, customColorScheme.onSurface)
                       ],
                     ),
                   )

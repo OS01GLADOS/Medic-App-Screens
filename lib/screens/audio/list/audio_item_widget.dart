@@ -3,20 +3,19 @@ import 'package:flutter/material.dart';
 import '../../../colors.dart';
 
 // ignore: must_be_immutable
-class AudioItemWidget extends StatefulWidget{
+class AudioItemWidget extends StatelessWidget{
 
   String image = '';
   String title = '';
   int length = 0;
   int listeners = 0;
 
+  var defaultTextStyle = const TextStyle(
+      color: customTextGreyColor
+  );
+
   AudioItemWidget(this.image, this.title, this.length, this.listeners, {Key? key}) : super(key: key);
 
-  @override
-  State<AudioItemWidget> createState() => _AudioItemWidgetState();
-}
-
-class _AudioItemWidgetState extends State<AudioItemWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -31,36 +30,33 @@ class _AudioItemWidgetState extends State<AudioItemWidget> {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 image: DecorationImage(
-                    image: AssetImage(widget.image)
+                    image: AssetImage(image)
                 )
             ),
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(widget.title,
+              Text(title,
                 style: const TextStyle(
                     fontSize: 18,
                     color: customTextGrey900Color
                 ),
               ),
               const SizedBox(height: 8),
-              Text(widget.listeners.toString()+ ' listeners',
-                style: const TextStyle(
-                    color: customTextGreyColor
-                ),
+              Text(listeners.toString()+ ' listeners',
+                style: defaultTextStyle
               )
             ],
           ),
           const Spacer(),
           Text(
-            widget.length.toString() + ' Min',
-            style: const TextStyle(
-                color: customTextGreyColor
-            ),
+            length.toString() + ' Min',
+            style: defaultTextStyle
           )
         ],
       ),
     );
   }
+
 }

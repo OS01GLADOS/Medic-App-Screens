@@ -1,20 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:medic_app_screens/components/down_bar.dart';
 import 'package:medic_app_screens/components/profile_upper_bar.dart';
-import 'package:charts_flutter/flutter.dart' as charts;
+import 'package:medic_app_screens/screens/profile/stats_data.dart';
 import '../../colors.dart';
+import '../../constants.dart';
 import 'stats.dart';
 import 'stats_chart.dart';
-
-
-double TextSize = 20;
-double MainTextSize = 35;
 
 double a = 200;
 
 class ProfileScreen extends StatefulWidget{
-
-  //list for graph
 
   const ProfileScreen({Key? key}) : super(key: key);
 
@@ -23,94 +18,14 @@ class ProfileScreen extends StatefulWidget{
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  final List<Stats> data = [
-
-    Stats(
-      dayName: 'Mon',
-      number: 100,
-      barColor: charts.ColorUtil.fromDartColor(customColorScheme.secondary),
-    ),
-    Stats(
-      dayName: '',
-      number: 199,
-      barColor: charts.ColorUtil.fromDartColor(customColorScheme.surface),
-    ),
-
-    Stats(
-      dayName: 'Tue',
-      number: 243,
-      barColor: charts.ColorUtil.fromDartColor(customColorScheme.secondary),
-    ),
-    Stats(
-      dayName: '  ',
-      number: 200,
-      barColor: charts.ColorUtil.fromDartColor(customColorScheme.surface),
-    ),
-
-    Stats(
-      dayName: 'Wed',
-      number: 300,
-      barColor: charts.ColorUtil.fromDartColor(customColorScheme.secondary),
-    ),
-    Stats(
-      dayName: '   ',
-      number: 274,
-      barColor: charts.ColorUtil.fromDartColor(customColorScheme.surface),
-    ),
-
-
-    Stats(
-      dayName: 'Thu',
-      number: 400,
-      barColor: charts.ColorUtil.fromDartColor(customColorScheme.secondary),
-    ),
-    Stats(
-      dayName: '    ',
-      number: 324,
-      barColor: charts.ColorUtil.fromDartColor(customColorScheme.surface),
-    ),
-
-    Stats(
-      dayName: 'Fri',
-      number: 520,
-      barColor: charts.ColorUtil.fromDartColor(customColorScheme.secondary),
-    ),
-    Stats(
-      dayName: '     ',
-      number: 534,
-      barColor: charts.ColorUtil.fromDartColor(customColorScheme.surface),
-    ),
-
-    Stats(
-      dayName: 'Sat',
-      number: 650,
-      barColor: charts.ColorUtil.fromDartColor(customColorScheme.secondary),
-    ),
-    Stats(
-      dayName: '      ',
-      number: 534,
-      barColor: charts.ColorUtil.fromDartColor(customColorScheme.surface),
-    ),
-
-    Stats(
-      dayName: 'Sun',
-      number: 650,
-      barColor: charts.ColorUtil.fromDartColor(customColorScheme.secondary),
-    ),
-    Stats(
-      dayName: '        ',
-      number: 900,
-      barColor: charts.ColorUtil.fromDartColor(customColorScheme.surface),
-    ),
-
-  ];
+  final List<Stats> data = profileData;
 
   @override
   Widget build(BuildContext context) {
     return Center(
         child: Column(
           children: [
-            const ProfileUpperBar(),
+            ProfileUpperBar(),
             Expanded(
                 child: Column(
                   children: [
@@ -130,18 +45,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
+                        children: const [
                           Text(
                             'Afreen Khan',
                             style: TextStyle(
                                 fontWeight: FontWeight.w500,
-                                fontSize: MainTextSize * 0.85
+                                fontSize: mainTextSize * 0.85
                             ),
                           ),
                           Text(
                             'Lucknow, India',
                             style: TextStyle(
-                              fontSize: TextSize,
+                              fontSize: textSize,
                               color: customTextGreyColor,
                             ),
                           ),

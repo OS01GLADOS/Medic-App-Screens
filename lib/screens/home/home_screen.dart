@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:medic_app_screens/components/down_bar.dart';
 import 'package:medic_app_screens/components/upper_bar.dart';
 
+import '../../constants.dart';
 import 'meditation_card.dart';
 import 'mood_selection_widget.dart';
-
-double TextSize = 20;
-double MainTextSize = 35;
 
 class HomeScreen extends StatelessWidget{
   const HomeScreen({Key? key}) : super(key: key);
@@ -16,7 +14,7 @@ class HomeScreen extends StatelessWidget{
     return Center(
         child: Column(
           children: [
-            const UpperBar(),
+            UpperBar(),
             Expanded(
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -24,17 +22,17 @@ class HomeScreen extends StatelessWidget{
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Welcome back, Afreen!',
+                      const Text('Welcome back, Afreen!',
                         style: TextStyle(
-                            fontSize: MainTextSize * 0.9,
+                            fontSize: mainTextSize * 0.9,
                             fontWeight: FontWeight.bold
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 5, bottom: 15),
+                      const Padding(
+                        padding: EdgeInsets.only(top: 5, bottom: 15),
                         child:  Text('How are you feeling today ?',
                           style: TextStyle(
-                            fontSize: TextSize,
+                            fontSize: textSize,
                           ),
                         ),
                       ),

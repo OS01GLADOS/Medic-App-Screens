@@ -3,62 +3,67 @@ import 'package:medic_app_screens/components/down_bar.dart';
 import 'package:medic_app_screens/components/upper_bar.dart';
 
 import '../../colors.dart';
+import '../../constants.dart';
 
-double TextSize = 20;
-double MainTextSize = 35;
+const defaultTextStyle = TextStyle(
+    fontSize: textSize,
+    color: customTextGreyColor
+);
 
 class MeditationScreen extends StatelessWidget{
-  const MeditationScreen({Key? key}) : super(key: key);
+  MeditationScreen({Key? key}) : super(key: key);
+
+  var screen_height;
+  var screen_width;
 
   @override
   Widget build(BuildContext context) {
+
+    screen_height = MediaQuery.of(context).size.height;
+    screen_width = MediaQuery.of(context).size.width;
+
     return Center(
         child: Column(
           children: [
-            const UpperBar(),
+            UpperBar(),
             Expanded(
                 child:Container(
                   width: double.infinity,
-                  margin: const EdgeInsets.symmetric(horizontal: 20),
+                  margin: EdgeInsets.symmetric(
+                      horizontal: screen_width * 0.05
+                  ),
                   child: Column(
                     children: [
-                      Text(
+                      SizedBox(height: screen_height*0.01),
+                      const Text(
                         'Meditation',
                         style: TextStyle(
-                          fontSize: MainTextSize,
+                          fontSize: mainTextSize,
                           fontWeight: FontWeight.bold
                         ),
                       ),
-                      Text(
+                      SizedBox(height: screen_height*0.01),
+                      const Text(
                         'Guided by a short introductory course,',
-                        style: TextStyle(
-                            fontSize: TextSize,
-                            color: customTextGreyColor
+                        style: defaultTextStyle
                       ),
+                      const Text('start trying meditation.',
+                        style: defaultTextStyle
                       ),
-                      Text('start trying meditation.',
-                        style: TextStyle(
-                            fontSize: TextSize,
-                            color: customTextGreyColor
-                        ),
+                      SizedBox(height: screen_height*0.02),
+                       Image(
+                          height: screen_height*0.4,
+                          image: AssetImage('assets/images/meditation.png')
                       ),
-
-                      const Padding(
-                        padding: EdgeInsets.only(top: 20, bottom: 15),
-                        child: Image(
-                            height: 250,
-                            image: AssetImage('assets/images/meditation.png')
-                        ),
-                      ),
-
-                      Text('45:00', style: TextStyle(
-                          fontSize: MainTextSize,
+                      SizedBox(height: screen_height*0.03),
+                      const Text('45:00', style: TextStyle(
+                          fontSize: mainTextSize,
                           color: customTextGreyColor
-                      ),
+                        ),
                       ),
                       Container(
-                        margin: const EdgeInsets.only(left :80, right: 80, top: 10),
-                        padding: const EdgeInsets.symmetric(vertical: 15),
+                        margin: EdgeInsets.symmetric(horizontal: screen_width * 0.2, vertical:screen_height*0.01),
+                        padding: EdgeInsets.symmetric(vertical: screen_height* 0.02),
                         decoration: BoxDecoration(
                             color: Theme.of(context).colorScheme.primary,
                             borderRadius: const BorderRadius.all(Radius.circular(10))
@@ -67,7 +72,7 @@ class MeditationScreen extends StatelessWidget{
                         child: Text(
                             'Start Now',
                             style: TextStyle(
-                            fontSize: TextSize,
+                            fontSize: textSize,
                                 color: customColorScheme.background
                         ),
                         ),

@@ -7,7 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:medic_app_screens/screens/app.dart';
+import 'package:medic_app_screens/app.dart';
 
 
 void main() {

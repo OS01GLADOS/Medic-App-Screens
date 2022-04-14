@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 // ignore: must_be_immutable
 class AudioVisualizer extends StatefulWidget{
 
-  late Color? color;
+  var color;
   double height = 20;
 
   AudioVisualizer(this.color, this.height, {Key? key}) : super(key: key);

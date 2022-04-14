@@ -197,7 +197,7 @@ class SleepSessionScreen extends StatelessWidget{
     return Center(
         child: Column(
           children: [
-            const UpperBar(),
+            UpperBar(),
             Expanded(
                child: Container(
                  width: double.infinity,

@@ -1,123 +1,64 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:medic_app_screens/screens/authentication/button_widget.dart';
 
-import '../../colors.dart';
+import '../../constants.dart';
+import 'button_bottom_text.dart';
+import 'default_text_style.dart';
+import 'login_register_box_decoration.dart';
+import 'logo.dart';
+import 'text_input.dart';
 
-double TextSize = 20;
-double MainTextSize = 35;
+class RegisterScreen extends StatelessWidget {
 
-class RegisterScreen extends StatelessWidget{
-  const RegisterScreen({Key? key}) : super(key: key);
+
+  var screen_height;
+  var screen_width;
+
+
+  RegisterScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return
-      Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/images/login_register_bottom.png"),
-              alignment: Alignment(0, 1.05),
-            ),
-          ),
-          padding: const EdgeInsets.fromLTRB(20.0, 0 ,20.0, 0.0),
-          child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children:[
-                const SizedBox(
-                  width: 50,
-                  height: 50,
-                  child: Image(image: AssetImage('assets/images/logo.png')),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 20, bottom:5),
-                  child: Text('Sign Up',
-                    style: TextStyle(
-                        fontSize: MainTextSize,
-                        fontWeight: FontWeight.bold
-                    ),
-                  ),
-                ),
 
-                Padding(
-                    padding: const EdgeInsets.only(bottom: 25),
-                    child: Text('Sign up now for free and start meditating, and explore Medic.',
-                      style: TextStyle(
-                        fontSize: TextSize,
-                      ),
-                    )
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 5),
-                  child: Column(
+    screen_height = MediaQuery.of(context).size.height;
+    screen_width = MediaQuery.of(context).size.width;
 
-                    children: [
-                      TextField(
-                          decoration: InputDecoration(
-                              hintText: 'Name',
-                              hintStyle: TextStyle(
-                                  fontSize: TextSize
-                              )
-                          )
-                      ),
-                      const SizedBox(height: 10),
-                      TextField(
-                          decoration: InputDecoration(
-                              hintText: 'Email Address',
-                              hintStyle: TextStyle(
-                                  fontSize: TextSize
-                              )
-                          )
-                      ),
-                      const SizedBox(height: 10),
-                      TextField(
-                          decoration: InputDecoration(
-                              hintText: 'Password',
-                              hintStyle: TextStyle(
-                                  fontSize: TextSize
-                              )
-                          )
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(top: 20, bottom: 5),
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.primary,
-                      borderRadius: const BorderRadius.all(Radius.circular(10))
-                  ),
-                  child: Center(
-                    child: Text('SIGNUP',
-                      style: TextStyle(
-                          fontSize: MainTextSize,
-                          color: Theme.of(context).colorScheme.background
-                      ),
-                    ),
-                  ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+    return Container(
+        decoration: loginRegisterBoxDecoration,
+        padding: EdgeInsets.symmetric(
+            horizontal: screen_width * 0.05
+        ),
+        child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              logo,
+              SizedBox(height: screen_height* 0.03),
+              const Text(
+                'Sign Up',
+                style: TextStyle(
+                    fontSize: mainTextSize, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: screen_height* 0.01),
+              const Text(
+                  'Sign up now for free and start meditating, and explore Medic.',
+                  style: defaultTextStyle),
+              SizedBox(height: screen_height* 0.0033),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 5),
+                child: Column(
                   children: [
-                    Text('Already have an account? ',
-                        style: TextStyle(
-                            fontSize: TextSize,
-                            color: customTextGreyColor
-                        )
-                    ),
-                    Text('Sign In',
-                        style: TextStyle(
-                            fontSize: TextSize,
-                            color: customTextGreyColor,
-                            fontWeight: FontWeight.bold
-
-                        )
-                    )
+                    TextInput('Name'),
+                    SizedBox(height: screen_height* 0.01),
+                    TextInput('Email Address'),
+                    SizedBox(height: screen_height* 0.01),
+                    TextInput('Password')
                   ],
-                )
-              ]
-          )
-      );
+                ),
+              ),
+              ButtonWidget('SIGNUP'),
+              ButtonBottomText('Already have an account? ', 'Sign In')
+            ]));
   }
 }

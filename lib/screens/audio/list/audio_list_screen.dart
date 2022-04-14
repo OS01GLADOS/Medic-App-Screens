@@ -4,10 +4,9 @@ import 'package:medic_app_screens/components/down_bar.dart';
 import 'package:medic_app_screens/components/upper_bar.dart';
 
 import '../../../colors.dart';
+import '../../../constants.dart';
 import 'audio_item_widget.dart';
 
-double TextSize = 20;
-double MainTextSize = 35;
 
 class AudioListScreen extends StatelessWidget{
   const AudioListScreen({Key? key}) : super(key: key);
@@ -17,7 +16,7 @@ class AudioListScreen extends StatelessWidget{
     return Center(
       child: Column(
         children: [
-          const UpperBar(),
+          UpperBar(),
           Expanded(
               child: Column(
                 children: [
@@ -39,7 +38,7 @@ class AudioListScreen extends StatelessWidget{
                           'Relax Sounds ',
                           style: TextStyle(
                             color: customColorScheme.background,
-                            fontSize: MainTextSize
+                            fontSize: mainTextSize
                           ),
                         ),
                         SizedBox(
@@ -48,7 +47,7 @@ class AudioListScreen extends StatelessWidget{
                             'Sometimes the most productive thing you can do is relax.',
                             style: TextStyle(
                                 color: customColorScheme.background,
-                                fontSize: TextSize * 0.75
+                                fontSize: textSize * 0.75
                             ),
                           ),
                         ),
@@ -64,13 +63,13 @@ class AudioListScreen extends StatelessWidget{
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
+                            children: const [
                               Text ('play now',
                                 style: TextStyle(
-                                    fontSize: TextSize * 0.8,
+                                    fontSize: textSize * 0.8,
                                 ),
                               ),
-                              const Image(
+                              Image(
                                 image: AssetImage('assets/icons/play_n.png'),
                               )
                             ],
