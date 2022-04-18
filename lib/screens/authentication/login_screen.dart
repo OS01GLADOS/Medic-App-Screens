@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:medic_app_screens/colors.dart';
 import 'package:medic_app_screens/screens/authentication/button_bottom_text.dart';
+import 'package:medic_app_screens/screens/meditation/meditation_screen.dart';
 
 import '../../constants.dart';
 import 'button_widget.dart';
@@ -36,14 +37,15 @@ class LoginScreen extends StatelessWidget {
               const Text(
                 'Sign In',
                 style: TextStyle(
-                    fontSize: mainTextSize, fontWeight: FontWeight.bold),
+                  color: customTextGrey700Color,
+                    fontSize: mainTextSize,
+                    fontWeight: FontWeight.bold,
+                ),
               ),
               SizedBox(height: screen_height* 0.01),
               const Text(
                 'Sign in now to access your exercises and saved music.',
-                style: TextStyle(
-                  fontSize: textSize,
-                ),
+                style: defaultTextStyle
               ),
               SizedBox(height: screen_height* 0.0033),
               Padding(

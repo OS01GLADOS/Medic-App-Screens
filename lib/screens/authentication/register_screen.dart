@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:medic_app_screens/screens/authentication/button_widget.dart';
 
+import '../../colors.dart';
 import '../../constants.dart';
 import 'button_bottom_text.dart';
 import 'default_text_style.dart';
@@ -38,10 +39,13 @@ class RegisterScreen extends StatelessWidget {
               const Text(
                 'Sign Up',
                 style: TextStyle(
-                    fontSize: mainTextSize, fontWeight: FontWeight.bold),
+                  color: customTextGrey700Color,
+                    fontSize: mainTextSize,
+                    fontWeight: FontWeight.bold,
+                ),
               ),
               SizedBox(height: screen_height* 0.01),
-              const Text(
+              Text(
                   'Sign up now for free and start meditating, and explore Medic.',
                   style: defaultTextStyle),
               SizedBox(height: screen_height* 0.0033),

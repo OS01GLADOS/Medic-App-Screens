@@ -40,7 +40,7 @@ class AudioItemWidget extends StatelessWidget{
               Text(title,
                 style: const TextStyle(
                     fontSize: 18,
-                    color: customTextGrey900Color
+                    color: customTextGrey700Color
                 ),
               ),
               const SizedBox(height: 8),
