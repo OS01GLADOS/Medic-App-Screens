@@ -26,8 +26,7 @@ class _MeditationCardState extends State<MeditationCard> {
     return Container(
       width: double.infinity,
       margin: const EdgeInsets.only(top: 30),
-      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
-      height: 160,
+      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 25),
       decoration: BoxDecoration(
         color: customGrey,
         borderRadius: const BorderRadius.all(Radius.circular(20)),

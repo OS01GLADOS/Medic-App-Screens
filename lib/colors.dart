@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:charts_flutter/flutter.dart' as charts;
 import 'dart:ui';
 
-const customChartColor = charts.Color(r:129, g:133, b:134);
 const customTextGreyColor = Colors.grey;
 const customTextGrey900Color = Color(0xFF9C9898);
 const customTextGrey700Color = Color(0xFF6D6D6F);

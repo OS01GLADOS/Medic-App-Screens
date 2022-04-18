@@ -2,23 +2,16 @@ import 'package:flutter/material.dart';
 
 import '../../constants.dart';
 
-
 // ignore: must_be_immutable
-class ToolsItem extends StatefulWidget{
-
+class ToolsItem extends StatelessWidget {
   String text = '';
   String icon = '';
 
-  ToolsItem(t, i, {Key? key}) : super(key: key){
+  ToolsItem(t, i, {Key? key}) : super(key: key) {
     text = t;
     icon = i;
   }
 
-  @override
-  State<ToolsItem> createState() => _ToolsItemState();
-}
-
-class _ToolsItemState extends State<ToolsItem> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -37,22 +30,20 @@ class _ToolsItemState extends State<ToolsItem> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.end,
-
         children: [
           Image(
             width: 35,
             height: 35,
-            image: AssetImage(widget.icon),
+            image: AssetImage(icon),
           ),
           Padding(
-              padding: const EdgeInsets.only(top:5),
-              child: Text(widget.text,
+              padding: const EdgeInsets.only(top: 5),
+              child: Text(
+                text,
                 style: TextStyle(
-                    color:Theme.of(context).colorScheme.background,
-                    fontSize: textSize * 0.75
-                ),
-              )
-          )
+                    color: Theme.of(context).colorScheme.background,
+                    fontSize: textSize * 0.75),
+              ))
         ],
       ),
     );

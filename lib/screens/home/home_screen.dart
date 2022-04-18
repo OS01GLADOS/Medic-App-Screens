@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:medic_app_screens/components/down_bar.dart';
 import 'package:medic_app_screens/components/upper_bar.dart';
 
+import '../../colors.dart';
 import '../../constants.dart';
 import 'meditation_card.dart';
 import 'mood_selection_widget.dart';
@@ -24,18 +25,21 @@ class HomeScreen extends StatelessWidget{
                     children: [
                       const Text('Welcome back, Afreen!',
                         style: TextStyle(
-                            fontSize: mainTextSize * 0.9,
-                            fontWeight: FontWeight.bold
+                            color: customTextGrey700Color,
+                            fontWeight: FontWeight.w700,
+                            fontSize: 33
                         ),
                       ),
                       const Padding(
-                        padding: EdgeInsets.only(top: 5, bottom: 15),
+                        padding: EdgeInsets.only(top: 5, bottom: 20),
                         child:  Text('How are you feeling today ?',
                           style: TextStyle(
                             fontSize: textSize,
+                            color: customTextGreyColor
                           ),
                         ),
                       ),
+
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [

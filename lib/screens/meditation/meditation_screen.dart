@@ -38,8 +38,9 @@ class MeditationScreen extends StatelessWidget{
                       const Text(
                         'Meditation',
                         style: TextStyle(
-                          fontSize: mainTextSize,
-                          fontWeight: FontWeight.bold
+                            color: customTextGrey700Color,
+                            fontWeight: FontWeight.w700,
+                            fontSize: 33
                         ),
                       ),
                       SizedBox(height: screen_height*0.01),

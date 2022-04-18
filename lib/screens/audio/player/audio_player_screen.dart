@@ -3,10 +3,11 @@ import 'dart:math' as math;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:medic_app_screens/components/down_bar.dart';
+import 'package:medic_app_screens/components/round_image.dart';
 import 'package:medic_app_screens/components/upper_bar.dart';
+import 'package:medic_app_screens/components/pic_labels.dart';
 
 import '../../../colors.dart';
-import '../../../constants.dart';
 import 'audio_visualizer.dart';
 import 'player_control_button.dart';
 
@@ -24,39 +25,13 @@ class AudioPlayerScreen extends StatelessWidget{
           Expanded(
               child: Column(
                 children: [
-                  Container(
-                    width: a,
-                    height: a,
-                    margin: const EdgeInsets.symmetric(vertical: 20),
-                    decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                            fit: BoxFit.fill,
-                            image: AssetImage('assets/images/music_cover.jpg')
-                        )
-                    ),
+                  Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 20),
+                    child:  RoundImage('assets/images/music_cover.jpg', a),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: const [
-                        Text(
-                          'Painting Forest',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: mainTextSize * 0.85
-                          ),
-                        ),
-                        Text(
-                          'By: Painting with Passion',
-                          style: TextStyle(
-                            fontSize: textSize,
-                            color: customTextGreyColor,
-                          ),
-                        ),
-                      ],
-                    ),
+                    child: PicLabels.leftSide('Painting Forest', 'By: Painting with Passion'),
                   ),
 
                   Padding(
